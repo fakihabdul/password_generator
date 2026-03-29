@@ -1,0 +1,21 @@
+import random
+
+huruf = "abcdefghijklmnopqrstuvwxyz"
+angka = "1234567890"
+
+def kasih_password(huruf, angka):
+    semua = huruf + angka
+    password = ''.join(random.sample(semua, 8))
+    return password #fix 1
+
+def nanya_password():
+    while True:
+        minta = input("apakah kamu mau membuat password? (y/n): ")
+        if minta == "n": #fix 2
+            print ("baiklah terimakasih")
+            break
+        else:
+            password = kasih_password (huruf, angka)#fix 3
+            print (f"ini password kamu {password}")
+
+nanya_password()    
